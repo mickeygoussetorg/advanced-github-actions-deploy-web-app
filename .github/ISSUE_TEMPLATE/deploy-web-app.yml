@@ -1,0 +1,36 @@
+name: Deploy Web App
+description: Advanced GitHub Actions Presentation - Deploy Web App
+title: "Deploy Web App: "
+body:
+  - type: input
+    id: repo-owner
+    attributes:
+      label: Repo Owner
+      description: Repo Owner
+      placeholder: ex. mickeygoussetorg
+    validations:
+      required: true
+  - type: input
+    id: repo-name
+    attributes:
+      label: Repo Name
+      description: Repo Name
+      placeholder: ex. repositoryname
+    validations:
+      required: true
+  - type: input
+    id: workflow-name
+    attributes:
+      label: Workflow Name
+      description: Workflow Name
+      placeholder: ex. myworkflow
+    validations:
+      required: true
+  - type: input
+    id: run-id
+    attributes:
+      label: Run ID
+      description: Run ID
+      placeholder: ex. 12345
+    validations:
+      required: true
