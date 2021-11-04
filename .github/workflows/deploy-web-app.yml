@@ -1,0 +1,31 @@
+name: example-client-payload-action
+on: 
+  workflow_dispatch:
+    inputs:
+      repoowner:
+        description: 'repoowner'
+        required: true
+jobs:
+  deploy-app:
+    name: Deploy App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Get Token
+        id: get_workflow_token
+        uses: peter-murray/workflow-application-token-action@v1
+        with:
+          application_id: ${{ secrets.APPLICATION_ID }}
+          application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+      
+      - name: download workflow artifact
+        uses: benday-inc/download-artifact@main
+        with:
+           token: ${{ steps.get_workflow_token.outputs.token }}
+           repository_owner: 'mickeygoussetorg'
+           repository_name: 'advanced-github-actions-presentation'
+           artifact_name: 'mywebappbuildartifacts'
+           workflow_name: 'Demo 06 - Create Build Off Main Branch'
+           run_id: '1403461150'
+           download_path: '${{ github.workspace }}/temp'
+           download_filename: 'actionsdemo-artifact.zip'
