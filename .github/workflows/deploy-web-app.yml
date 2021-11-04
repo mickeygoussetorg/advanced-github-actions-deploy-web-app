@@ -28,7 +28,8 @@ jobs:
            workflow_name: 'Demo 06 - Create Build Off Main Branch'
            run_id: '1403461150'
            download_path: '${{ github.workspace }}/temp'
-           download_filename: 'actionsdemo-artifact.zip'
+           download_filename: 'pleasework'
+           #download_filename: 'actionsdemo-artifact.zip'
            
       - name: dir
         run: ls ${{ github.workspace }}/temp
