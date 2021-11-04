@@ -29,3 +29,9 @@ jobs:
            run_id: '1403461150'
            download_path: '${{ github.workspace }}/temp'
            download_filename: 'actionsdemo-artifact.zip'
+           
+      - name: dir
+        run: ls ${{ github.workspace }}/temp
+        
+      - name: dir2
+        run: echo ls ${{ github.workspace }}/temp
